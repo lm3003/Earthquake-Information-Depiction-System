@@ -1,2 +1,2 @@
-# Earthquake-Information-Depiction-System
+# Earthquake-Information-System
 Interactive graphical earthquake information depiction system
