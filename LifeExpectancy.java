@@ -18,7 +18,7 @@ import de.fhpotsdam.unfolding.marker.Marker;
 
 /**
  * Visualizes life expectancy in different countries. 
- * 
+ * @author: Love Modi, UC San Diego Intermediate Software Development MOOC team
  * It loads the country shapes from a GeoJSON file via a data reader, and loads the population density values from
  * another CSV file (provided by the World Bank). The data value is encoded to transparency via a simplistic linear
  * mapping.
