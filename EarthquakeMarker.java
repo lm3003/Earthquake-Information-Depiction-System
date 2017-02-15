@@ -6,7 +6,7 @@ import processing.core.PGraphics;
 
 /** Implements a visual marker for earthquakes on an earthquake map
  * 
- * @author UC San Diego Intermediate Software Development MOOC team
+ * @author Love Modi, UC San Diego Intermediate Software Development MOOC team
  *
  */
 // TODO: Implement the comparable interface
@@ -17,9 +17,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	protected boolean isOnLand;
 
 	// The radius of the Earthquake marker
-	// You will want to set this in the constructor, either
-	// using the thresholds below, or a continuous function
-	// based on magnitude. 
+	
 	protected float radius;
 	
 	
@@ -123,13 +121,7 @@ public abstract class EarthquakeMarker extends CommonMarker implements Comparabl
 	}
 
 	
-	/**
-	 * Return the "threat circle" radius, or distance up to 
-	 * which this earthquake can affect things, for this earthquake.   
-	 * DISCLAIMER: this formula is for illustration purposes
-	 *  only and is not intended to be used for safety-critical 
-	 *  or predictive applications.
-	 */
+	
 	public double threatCircle() {	
 		double miles = 20.0f * Math.pow(1.8, 2*getMagnitude()-5);
 		double km = (miles * kmPerMile);
