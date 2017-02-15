@@ -21,25 +21,19 @@ import processing.core.PApplet;
 
 /** EarthquakeCityMap
  * An application with an interactive map displaying earthquake data.
- * Author: UC San Diego Intermediate Software Development MOOC team
- * @author Your name here
- * Date: July 17, 2015
+ * 
+ * @author Love Modi, UC San Diego MOOC team
+ * Date: Nov 17, 2016
  * */
 public class EarthquakeCityMap extends PApplet {
 	
-	// We will use member variables, instead of local variables, to store the data
-	// that the setUp and draw methods will need to access (as well as other methods)
-	// You will use many of these variables, but the only one you should need to add
-	// code to modify is countryQuakes, where you will store the number of earthquakes
-	// per country.
 	
-	// You can ignore this.  It's to get rid of eclipse warnings
 	private static final long serialVersionUID = 1L;
 
-	// IF YOU ARE WORKING OFFILINE, change the value of this variable to true
+	
 	private static final boolean offline = false;
 	
-	/** This is where to find the local tiles, for working without an Internet connection */
+	
 	public static String mbTilesString = "blankLight-1-3.mbtiles";
 	
 	
@@ -71,7 +65,7 @@ public class EarthquakeCityMap extends PApplet {
 		size(900, 700, OPENGL);
 		if (offline) {
 		    map = new UnfoldingMap(this, 200, 50, 650, 600, new MBTilesMapProvider(mbTilesString));
-		    earthquakesURL = "2.5_week.atom";  // The same feed, but saved August 7, 2015
+		    earthquakesURL = "2.5_week.atom";  
 		}
 		else {
 			map = new UnfoldingMap(this, 200, 50, 650, 600, new Google.GoogleMapProvider());
@@ -120,8 +114,7 @@ public class EarthquakeCityMap extends PApplet {
 	    //printQuakes();
 	 		
 	    // (3) Add markers to map
-	    //     NOTE: Country markers are not added to the map.  They are used
-	    //           for their geometric properties
+	    
 	    map.addMarkers(quakeMarkers);
 	    map.addMarkers(cityMarkers);
 	    sortAndPrint(100);
@@ -353,8 +346,7 @@ public class EarthquakeCityMap extends PApplet {
 	// set this "country" property already.  Otherwise it returns false.
 	private boolean isLand(PointFeature earthquake) {
 		
-		// IMPLEMENT THIS: loop over all countries to check if location is in any of them
-		// If it is, add 1 to the entry in countryQuakes corresponding to this country.
+		
 		for (Marker country : countryMarkers) {
 			if (isInCountry(earthquake, country)) {
 				return true;
@@ -395,10 +387,7 @@ public class EarthquakeCityMap extends PApplet {
 	
 	
 	
-	// helper method to test whether a given earthquake is in a given country
-	// This will also add the country property to the properties of the earthquake feature if 
-	// it's in one of the countries.
-	// You should not have to modify this code
+	
 	private boolean isInCountry(PointFeature earthquake, Marker country) {
 		// getting location of feature
 		Location checkLoc = earthquake.getLocation();
